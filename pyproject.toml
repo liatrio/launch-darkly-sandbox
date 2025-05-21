@@ -1,0 +1,23 @@
+[project]
+name = "launch-darkly-workshop"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Patrick Paulino", email = "ppaulino@ritchiebros.com" }
+]
+dependencies = [
+    "flask>=3.1.1",
+    "launchdarkly-server-sdk>=9.11.0",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[tool.rye]
+managed = true
+virtual = true
+dev-dependencies = [
+    "pytest>=8.3.5",
+]
+
+[tool.rye.scripts]
+dev = { cmd = "flask run --debug --port 8083 --host 0.0.0.0", env = { FLASK_APP = "./app.py" } }
